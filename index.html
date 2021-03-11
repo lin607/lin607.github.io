@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -178,6 +178,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -194,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/test-my-site/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/AS%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/11/test-my-site/" class="post-title-link" itemprop="url">test_my_site</a>
+          <a href="/2021/03/11/AS%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">AS活动的学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -217,8 +218,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-03-11 12:40:44" itemprop="dateCreated datePublished" datetime="2021-03-11T12:40:44+08:00">2021-03-11</time>
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:49:05" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
     </span>
 
   
@@ -231,7 +233,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h1 id="AS活动的学习"><a href="#AS活动的学习" class="headerlink" title="AS活动的学习"></a>AS活动的学习</h1><ol>
+<li><p><strong>创建没有活动的空项目</strong>即Add No Activity，在Java文件夹里创建一个空活动(Empty Activity)不勾选GenerateLayoutFile(帮助创建一个对应的布局文件)，不勾选LauncherActivity(表示将当前活动设置为主活动)。Java文件里已经创建的活动中已经帮我们重写了onCreate方法。</p>
+</li>
+<li><p><strong>创建和加载布局</strong>，在res目录创建一个layout子目录,在这个子目录创建Layoutresourcefile，根元素选择默认的LinearLayout，转换成text视图后可以，修改布局,添加控件,如Button Textview等。在Java文件中重载onCreate函数体里添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setContentView(R.layout.first_layout);</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>在AndroidManifest文件中注册</strong>,放在&lt;application&gt;标签内,即&lt;activity&gt;,name属性表示注册活动的名称.FirstActivity(com.example.activitytest.FirstActivity的缩写),外层的&lt;manifest&gt;标签通过package属性指定了程序报名故可以省略.配置其为主活动,通过添加&lt;intent-filter&gt;标签,在内部添加，<code>&lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;</code>语句<code>category...LAUNCHER</code>语句实现。</p>
+</li>
+<li><p><strong>使用Toast</strong>，定义一个Toast的触发点，如图</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201010194104007.png" alt="image-20201010194104007" style="zoom:50%;" /></li>
+<li><p><strong>使用Menu</strong>创建和加载布局，在res中创建一个menu子目录，创建一个名为main的menuresourcefile，在main.xml中添加下图代码</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201010195038515.png" alt="image-20201010195038515" style="zoom:50%;" />
+
+<p>&lt;tiem&gt;标签是创建某一个具体的菜单项，再回FirstActivity中重写onCreateOptionsMenu方法，getMenuInflater获取一个MenuInflater对象调用inflate方法可以创建菜单，传参是①哪一个资源文件创建菜单，②菜单项添加到哪一个Menu对象，返回Ture显示菜单，但是菜单显示后要响应事件，不然没用，在FirstActivity重写，如图所示</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201010195830259.png" alt="image-20201010195830259" style="zoom:50%;" /></li>
+<li><p><strong>销毁一个活动</strong>，onClick方法添加finish()语句可以实现与按下back键一样的按钮</p>
+</li>
+<li><p><strong>使用Intent在活动之间穿梭</strong></p>
+<ol>
+<li><p>Intent指定当前组件想要执行的动作，在不同组件之间传递数据</p>
+</li>
+<li><p>使用显示Intent，创建一个空活动，但是勾选GenerateLayoutFile，不勾选LauncherActivity，修改布局文件根元素为LinearLayout的代码，Java文件夹里已经加载了布局，已经注册了活动，不需要添加&lt;intent-filter&gt;标签，Intent构造函数的重载形式之一，第一个参数是启动活动的上下文，第二个参数是要启动的目标活动，使用startActivity(intent)启动目标活动。</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201010205107956.png" alt="image-20201010205107956" style="zoom:50%;" /></li>
+<li><p>使用隐式Intent，在&lt;intent-filter&gt;标签添加下图代码，再修改button1的点击事件，Intent的构造函数还有一个传入action的字符串的参数的版本，表示要启动可以响应com.example.activitytest.ACTION_START这个action的活动，可以通过 <code>intent.addCategory()</code>方法添加category然后添加在&lt;activity&gt;标签的&lt;intent-filter&gt;中，以便可以响应该事件。</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011075841522.png" alt="image-20201011075841522" style="zoom:50%;" /></li>
+<li><p>隐式Intent启动其它程序的活动，使Android多个应用程序之间的功能共享成为可能，比如我的应用程序需要显示一个网页，调用系统的浏览器打开就好了，修改onClick方法，指定Intent的action是下图的常量Intent.ACTION_VIEW，通过setData方法传进一个Uri对象，Uri.parse把一个字符串解析成数据，与此对应的是&lt;intent-filter&gt;的&lt;data&gt;标签，指定活动可以响应什么类型的数据</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011080655739.png" alt="image-20201011080655739" style="zoom:50%;" /></li>
+<li></li>
+</ol>
+</li>
+</ol>
+
       
     </div>
 
@@ -257,7 +289,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/AS%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -270,7 +302,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+          <a href="/2021/03/11/AS%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">AS常用控件的使用方法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,8 +312,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2021-03-11 12:37:48" itemprop="dateCreated datePublished" datetime="2021-03-11T12:37:48+08:00">2021-03-11</time>
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:48:04" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
     </span>
 
   
@@ -294,19 +327,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <h1 id="AS常用控件的使用方法"><a href="#AS常用控件的使用方法" class="headerlink" title="AS常用控件的使用方法"></a>AS常用控件的使用方法</h1><h4 id="1-TextView"><a href="#1-TextView" class="headerlink" title="1.TextView"></a>1.TextView</h4><ul>
+<li><img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011190211061.png" alt="image-20201011190211061" style="zoom:70%;" /></li>
+<li><img src="https://raw.githubusercontent.com/lin607/PicGo/master/img/image-20201011190211061.png"></li>
+<li>TextView中的文字默认是居左上角对齐，gravity属性的值指定文字的对齐方式，如top bottom left right center等，用”|”指定多个值，textSize指定文字大小，textColor指定文字颜色(十六进制)</li>
+</ul>
+<h4 id="2-Button"><a href="#2-Button" class="headerlink" title="2. Button"></a>2. Button</h4><ul>
+<li><img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011191002667.png" alt="image-20201011191002667" style="zoom:67%;" /></li>
+<li><p>text里的文字自动大写，将textAllCaps值改为false即可禁用这一默认特性，在Java文件里添加button，并且注册一个点击事件，即setOnClickListener</p>
+</li>
+</ul>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011191305092.png" alt="image-20201011191305092" style="zoom:67%;" />
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h4 id="3-EditText"><a href="#3-EditText" class="headerlink" title="3.EditText"></a>3.EditText</h4><ul>
+<li>用于和用户进行交互，允许用户在控件里输入和编辑内容，在程序中对内容进行处理</li>
+</ul>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011191434947.png" alt="image-20201011191434947" style="zoom:67%;" />
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li><p>通过hint属性指定值表示输入默认为空时显示的文字，通过maxLines指定EditText向下拉伸的最大行数，超过后将是<strong>文本滚动</strong>，而不是向下伸展</p>
+</li>
+<li><p>通过EditText和Button连用实现获取EditText里的文字并通过Toast显示</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011192039826.png" alt="image-20201011192039826" style="zoom:67%;" /></li>
+</ul>
+<h4 id="4-ImageView"><a href="#4-ImageView" class="headerlink" title="4.ImageView"></a>4.ImageView</h4><ul>
+<li><p>用于在界面上展示图片的一个控件，图片资源放在”drawable”目录下，在布局中添加该空间，src指定图片的资源，即图片的引用</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011192403690.png" alt="image-20201011192403690" style="zoom:67%;" /></li>
+<li><p>通过更改onClick方法，可以动态改变显示的图片</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011192538552.png" alt="image-20201011192538552" style="zoom:67%;" /></li>
+</ul>
+<h4 id="5-ProgressBar"><a href="#5-ProgressBar" class="headerlink" title="5.ProgressBar"></a>5.ProgressBar</h4><ul>
+<li>用于在界面上显示一个进度条，<strong>visibility</strong>(布局文件中的标签属性)属性可以指定visible invisible gone值，表示空间的透明程度，对于该控件类有<strong>setVisibility</strong>方法，设置透明度，可选值有View.VISIBLE View.INVISIBLE View.GONE三种</li>
+<li>修改style属性可以指定是圆形进度条还是水平进度条，max属性给进度条设置一个最大值，然后通过代码(JAVA里的)动态修改进度条</li>
+</ul>
+<h4 id="6-AlertDialog"><a href="#6-AlertDialog" class="headerlink" title="6.AlertDialog"></a>6.AlertDialog</h4><ul>
+<li><p>在当前界面弹出一个对话框，置顶于所有界面元素之上，用于提示非常重要的内容</p>
+</li>
+<li><p>AlertDialog.Builder创建一个AlertDialog实例，为这个对话框设置标题，可否取消，调用setPositiveButton()方法为对话框设置<strong>确定</strong>按钮的点击事件，setNegativeButton()设置<strong>取消</strong>按钮的点击事件，调用show显示对话框</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011195423773.png" alt="image-20201011195423773" style="zoom:67%;" /></li>
+</ul>
+<h4 id="7-ProgressDialog"><a href="#7-ProgressDialog" class="headerlink" title="7.ProgressDialog"></a>7.ProgressDialog</h4><ul>
+<li><p>显示一个进度条，表示当前操作比较耗时，构建一个ProgressDialog对象，设置标题文字等，setCancelable是False时，需要dimiss()方法来关掉窗口，不然一直存在</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201011200025416.png" alt="image-20201011200025416" style="zoom:67%;" /></li>
+</ul>
 
       
     </div>
@@ -325,6 +388,786 @@
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/AS%E7%9A%84%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/AS%E7%9A%84%E5%B8%83%E5%B1%80%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">AS的布局学习</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:48:51" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="AS的布局学习"><a href="#AS的布局学习" class="headerlink" title="AS的布局学习"></a>AS的布局学习</h1><h4 id="1-线性布局"><a href="#1-线性布局" class="headerlink" title="1.线性布局"></a>1.线性布局</h4><ol>
+<li>LinearLayout，有垂直和水平排列，在布局文件中指定orientation的值是vertical或者horizontal</li>
+<li>vertical内部控件高度不能是match_parent，水平方向上的对齐方式才有效(layout_gravity)，horizontal内部控件宽度不能是match_parent，同上垂直方向对齐有效</li>
+<li><strong>layout_weight属性</strong>可以指定一行中控件所占据的大小，通过累加所有的weight来算总数，再通过每一个控件指定的值除以该总数得到一个比例就是该控件所占大小</li>
+<li>layout_width和layout_height可以指定dp为单位的数值大小</li>
+</ol>
+<h4 id="2-相对布局"><a href="#2-相对布局" class="headerlink" title="2.相对布局"></a>2.相对布局</h4><ol>
+<li>RelativeLayout，相对于父布局或者已有空间指定位置</li>
+</ol>
+<h4 id="3-帧布局"><a href="#3-帧布局" class="headerlink" title="3.帧布局"></a>3.帧布局</h4><ol>
+<li>FrameLayout所有空间默认摆放在布局的左上角</li>
+</ol>
+<h4 id="4-百分比布局"><a href="#4-百分比布局" class="headerlink" title="4.百分比布局"></a>4.百分比布局</h4><ol>
+<li><p>PercentFrameLayout,PercentRelativeLayout两个全新的布局，使用标签是android.support.percent.PercentFrameLayout，属性要定义一个app的命名空间，即添加xmlns:app=”http://..res-auto”</p>
+</li>
+<li><p>要在app/build.gradle文件中添加依赖才可以使用，在dependencies闭包中添加以下内容，添加后需要<strong>Sync Now</strong>，同步gradle文件</p>
+<img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20201013180931049.png" alt="image-20201013180931049" style="zoom:67%;" /></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/C++%E6%A0%87%E5%87%86%E5%BA%93%EF%BC%88%E5%8C%85%E5%90%ABSTL%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/C++%E6%A0%87%E5%87%86%E5%BA%93%EF%BC%88%E5%8C%85%E5%90%ABSTL%EF%BC%89/" class="post-title-link" itemprop="url">C++标准库（包含STL）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:49:39" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>关于c++ stand libaries 的理解</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/11/C++%E6%A0%87%E5%87%86%E5%BA%93%EF%BC%88%E5%8C%85%E5%90%ABSTL%EF%BC%89/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E4%B8%93%E5%AE%B6%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E4%B8%93%E5%AE%B6%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">3-机器学习-专家系统</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:55:50" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="专家系统"><a href="#专家系统" class="headerlink" title="专家系统"></a>专家系统</h1><ol>
+<li>专家系统是一个智能计算机程序系统，其内部含有大量的某个领域专家水平的知识和经验。</li>
+<li>专家系统的特点<ul>
+<li>启发性</li>
+<li>透明性</li>
+<li>灵活性</li>
+</ul>
+</li>
+<li>主要组成部分<ul>
+<li>知识库</li>
+<li>推理机</li>
+<li>解释器</li>
+<li>接口</li>
+</ul>
+</li>
+<li>基于规则的专家系统：使用事实和规则的AI推理技术的成功应用</li>
+<li>系统的主要组成部分是和推理引擎</li>
+<li>粗糙集理论<ul>
+<li>Ind(B),B是属性的子集，不可分辨关系</li>
+<li>概念是对象(U)的集合，X是概念，包含于U，B(下划线)(X)，是下近似，即用不确定的概念可以用确定的上下近似集合表示。</li>
+<li>概念是不精确的</li>
+<li>边界-&gt;量化-&gt;知识的粗糙度</li>
+<li><strong>整体的概念</strong>可由正域，边界域，负域表示POSC(D)，D是决策属性</li>
+<li>近似质量：在知识C(属性)下可正确划分到决策D的样本比例</li>
+<li>属性的重要性，核属性，相对约简</li>
+<li><em>形成规则</em>，找一个最简的规则集覆盖所有样例</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E5%86%B3%E7%AD%96%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E5%86%B3%E7%AD%96%E6%A0%91/" class="post-title-link" itemprop="url">1-机器学习课程总结-决策树</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:54:15" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><ol>
+<li>CLS算法：采用不同的测试属性及其先后顺序将会产生不同的决策树</li>
+<li>CLS没有规定采用何种方式选择测试属性，而测试属性集的组成以及测试属性的先后对决策树生成具有举足轻重的影响</li>
+<li>ID3主要针对属性选择问题，使用信息增益率来选择测试属性，适合离散型数据</li>
+<li>信息熵越小，数据的不确定度（纯度）越高</li>
+<li>属性A对样本集D进行划分所获得的不确定性消除量，成为信息增益<ul>
+<li>知道问题相关信息，不确定性程度会减少</li>
+</ul>
+</li>
+<li>信息增益可以反映属性的重要程度，决策树构造优先选择重要程度大的属性</li>
+<li>CART决策树<ol>
+<li>基尼系数，基尼系数越小，数据的纯度越高</li>
+</ol>
+</li>
+<li>决策树剪枝：<ol>
+<li>理想的决策树有三种：<ol>
+<li>叶子节点数最少</li>
+<li>叶子节点深度最小</li>
+<li>叶子节点数最少且叶子节点深度最小</li>
+</ol>
+</li>
+<li>上述决策树的找到是NP问题，所以决策树优化的目的就是要找到尽可能趋向于最优的决策树。</li>
+<li>决策树剪枝：<ol>
+<li>预剪枝：在决策树生成过程中，对每个节点在划分前先进行估计，若当前节点的划分不能带来决策树泛化性能提升，则停止划分并将当前节点标记为叶节点<ol>
+<li>基于贪婪策略，有欠拟合风险</li>
+</ol>
+</li>
+<li>后剪枝：先从训练集生成一颗完整的决策树，然后自底向上地对非叶节点进行考察，若将该节点对应的子树替换成叶节点能带来决策树泛化性能的提升，则将该子树替换为叶节点</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E5%9B%BE%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E5%9B%BE%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-11 18:44:59" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-10 14:52:26" itemprop="dateModified" datetime="2021-01-10T14:52:26+08:00">2021-01-10</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="图的矩阵表示"><a href="#图的矩阵表示" class="headerlink" title="图的矩阵表示"></a>图的矩阵表示</h1><ol>
+<li>无向图的关联矩阵，M(G)<ul>
+<li>纵坐标是边，横坐标是顶点</li>
+<li>每一列的和是2，有一行的和为0，说明这个是孤立点</li>
+<li>矩阵的值可取0,1,2</li>
+</ul>
+</li>
+<li>有向图的关联矩阵<ul>
+<li>纵坐标是边，横坐标是顶点</li>
+<li>边的始点是1，终点是-1，无关联是0</li>
+</ul>
+</li>
+<li>有向图的邻接矩阵<ul>
+<li>顶点之间邻接的次数</li>
+<li>D中通路及回路数</li>
+</ul>
+</li>
+<li>有向图的可达矩阵<ul>
+<li>对角线上的元素为1</li>
+<li>1，表示两个顶点之间可达，0表示不可达</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:54:56" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ol>
+<li>线性结构<ul>
+<li>将数据项以某种线性的次序组织起来</li>
+<li>Stack维持了数据项后进先出的次序<ul>
+<li>push,pop,isEmpty</li>
+</ul>
+</li>
+<li>Queue维持了数据项先进先出的次序<ul>
+<li>enqueue,dequeue,isEmpty</li>
+</ul>
+</li>
+<li>书写表达式的方法有前缀、中缀、后缀</li>
+<li>Deque可以同时具备栈和队列的功能<ul>
+<li>addFront,addRear,removeFront,removeRear,isEmpty</li>
+</ul>
+</li>
+<li>列表List顺序存储</li>
+<li>链表的实现可以保持列表维持相对位置的特点，不需要连续的存储空间</li>
+<li>表头head需要特别的处理</li>
+<li></li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%AA%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%BB%AA%E8%AE%BA/" class="post-title-link" itemprop="url">0-机器学习课程总结-绪论</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:54:25" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="机器学习绪论"><a href="#机器学习绪论" class="headerlink" title="机器学习绪论"></a>机器学习绪论</h1><ol>
+<li>机器学习：致力于研究如何通过计算的手段，利用经验来改善系统自身的性能</li>
+<li>形式定义：假设用P来评估计算机程序再某任务类T上的性能，若一个程序通过利用经验E在T中任务上获得了性能改善，则程序对E进行了学习</li>
+<li>经验：数据驱动、概率、统计、和优化方法</li>
+<li>学习算法：从数据中产生“模型”的算法</li>
+<li>数据相关的问题：<ul>
+<li>特征：表述样本的表现或性质xi，个数成为维数</li>
+<li>特征类型：连续-离散，条件特征-决策特征</li>
+<li>标记：离散值（分类），连续值（回归），也可能无标记（聚类）</li>
+</ul>
+</li>
+<li>有监督学习：<ul>
+<li>任务：给定一组带类别标记信息的数据，如何训练有效的模型对未知类别的数据进行预测</li>
+<li>标记信息：离散型（分类），连续型（回归）</li>
+<li>算法：<ul>
+<li>线性回归</li>
+<li>线性判别分析</li>
+<li>朴素贝叶斯</li>
+<li>决策树</li>
+<li>支持向量机</li>
+<li>神经网络</li>
+<li>K近邻</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>无监督学习：<ul>
+<li>给定一组无类别信息的数据，如何训练模型推断出数据的一些内在结构信息</li>
+<li>算法：<ul>
+<li>K-means</li>
+<li>Fuzzy K-means</li>
+<li>DBSCAN</li>
+<li>谱聚类</li>
+<li>层次聚类</li>
+<li>PCA</li>
+<li>NMF</li>
+<li>PageRank</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>半监督学习：<ul>
+<li>给定少量有类别信息和大量无类别信息的数据，如何训练模型进行预测或推断出数据的一些内在结构</li>
+<li>算法：<ul>
+<li>主动学习</li>
+<li>协同学习</li>
+<li>分歧模型</li>
+<li>图模型</li>
+<li>半监督模型SVM</li>
+<li>半监督聚类</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本概念<ol>
+<li>收集数据-&gt;数据集划分-&gt;维度约简-&gt;算法选择-&gt;模型训练-&gt;模型测试</li>
+</ol>
+</li>
+<li>归纳学习：从样例中学习-特殊到一般的泛化</li>
+<li>奥卡姆剃刀：若有多个假设与观察一致，则选择最简单的那个-假设也即模型</li>
+<li>模型评估与选择：<ul>
+<li>错误率：分类错的样本数目占样本总数的比率，相应地，可定义精度，即精度=1-错误率</li>
+<li>误差：模型的预测输出与样本的真实输出之间的差异</li>
+<li>训练误差：模型在训练集上的误差</li>
+<li>泛化误差：模型在新样本上的误差，泛化误差小，但预测样本未知，实际只能使训练误差小</li>
+<li>模型选择：普遍规律，泛化性能强</li>
+<li>测试误差近似泛化误差<ul>
+<li>留出法</li>
+<li>交叉验证法</li>
+<li>验证集-调参</li>
+</ul>
+</li>
+<li>性能度量：衡量模型泛化能力的评价标准<ul>
+<li>回归任务-均方误差</li>
+<li>分类任务-错误率-精度</li>
+<li>聚类任务-DB指数</li>
+</ul>
+</li>
+<li><img src="C:\Users\lin\AppData\Roaming\Typora\typora-user-images\image-20210111084347553.png"></li>
+<li>过拟合，模型对于训练集的噪声数据学习过多，以至于对没在训练集中的数据表现很差</li>
+<li>欠拟合，模型并没有对训练集进行学习，在训练集和测试集上都表现很差</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F2_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F2_1/" class="post-title-link" itemprop="url">计算机系统2课程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-11 18:44:59 / Modified: 18:54:45" itemprop="dateCreated datePublished" datetime="2021-03-11T18:44:59+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="计算机系统2-1"><a href="#计算机系统2-1" class="headerlink" title="计算机系统2_1"></a>计算机系统2_1</h2><ol>
+<li><p>把课件上的题目做一遍，如果有错误就把它找出来，如计算提升性能的倍率</p>
+<ul>
+<li>amdahl定理</li>
+</ul>
+</li>
+<li><p>源程序是一个由值为0和1组成的位序列，<strong>8个位(bit)<strong>被组织成</strong>字节(bytes)</strong></p>
+<ul>
+<li>只由<strong>ASCII</strong>字符构成的文件称为文本文件，其他文件被称为二进制文件</li>
+</ul>
+</li>
+<li><p>计算机系统寻址和字节顺序的方法</p>
+<ul>
+<li><p>大端法，高位储存在低地址</p>
+</li>
+<li><p>小端法，高位存储在高地址</p>
+</li>
+<li><p>如何判断机器使用的表示方法，可以通过C语言取地址打印出来，或者其他方法，通过自己的方法找出来。</p>
+</li>
+<li><p>```c<br>#include&lt;stdio.h&gt;</p>
+<p>int main(void){</p>
+<pre><code>short num = 0x2017;
+char* c;
+c = (char *)&amp;num;
+if(*c==0x20)&#123;
+    printf(&quot;This is Big-end data storage.\n&quot;);
+&#125;else if(*c==0x17)&#123;
+    printf(&quot;This is Little-end data storage.\n&quot;);
+&#125;else&#123;
+    printf(&quot;Wrong logic.\n&quot;);
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;c</span><br><span class="line">  #include&lt;stdio.h&gt;</span><br><span class="line">  </span><br><span class="line">  typedef unsigned int uint32;</span><br><span class="line">  typedef unsigned short uint16;</span><br><span class="line">  typedef unsigned char uint8;</span><br><span class="line">  </span><br><span class="line">  void test(uint8 *a)&#123;</span><br><span class="line">      a[0]&#x3D;0x1;</span><br><span class="line">      a[1]&#x3D;0x2;</span><br><span class="line">      return ;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  int main(void)&#123;</span><br><span class="line">      int x&#x3D;0x12345678;</span><br><span class="line">      printf(&quot;0x%x\n&quot;,(char)x);</span><br><span class="line">      </span><br><span class="line">      test((uint8 *)&amp;x);</span><br><span class="line">      printf(&quot;0x%x\n&quot;,(uint16)x);</span><br><span class="line">      printf(&quot;0x%x\n&quot;,x);</span><br><span class="line">      return 0;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li></li>
+</ul>
+</li>
+<li><p>gcc编译的时候，添加<code>-Wall</code>参数</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 <script>
@@ -363,7 +1206,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">John Doe</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
 
     </div>

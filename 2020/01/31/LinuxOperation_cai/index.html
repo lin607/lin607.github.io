@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="开始接触Linux相关操作，都是在命令行界面，没有图形界面那样轻松了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Linux相关指令">
+<meta property="og:url" content="http://example.com/2020/01/31/LinuxOperation_cai/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开始接触Linux相关操作，都是在命令行界面，没有图形界面那样轻松了。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-31T12:51:42.000Z">
+<meta property="article:modified_time" content="2020-03-08T13:59:28.320Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/01/31/LinuxOperation_cai/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>学习Linux相关指令 | Hexo</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">常用的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E4%B8%9C%E8%A5%BF%E8%BF%9B%E5%8E%BB%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">写东西进去文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90"><span class="nav-number">4.</span> <span class="nav-text">换阿里源</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/01/31/LinuxOperation_cai/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习Linux相关指令
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-01-31 20:51:42" itemprop="dateCreated datePublished" datetime="2020-01-31T20:51:42+08:00">2020-01-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-03-08 21:59:28" itemprop="dateModified" datetime="2020-03-08T21:59:28+08:00">2020-03-08</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>开始接触Linux相关操作，都是在命令行界面，没有图形界面那样轻松了。</p>
+<span id="more"></span>
+<hr>
+<h2 id="常用的"><a href="#常用的" class="headerlink" title="常用的"></a>常用的</h2><p>那就只能是<kbd>ls</kbd>、<kbd>cd</kbd>、<kbd>pwd</kbd>，一开始只认识这几个，也是最常用的吧。用ls查看有什么文件（加上-a看更详细一点的），再cd到那个目录。</p>
+<hr>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>1.<kbd>cp</kbd><br>复制文件，换源的时候用到了，如果destination没有，就创建一个。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp <span class="built_in">source</span> destination</span><br></pre></td></tr></table></figure>
+<p>2.<kbd>mkdir</kbd><br>创建目录！要和<kbd>touch</kbd>区分开，touch是创建一个文件<br>3.<kbd>rm</kbd><br>删除文件或者目录，<strong>空目录</strong>可以使用<kbd>rmdir</kbd>命令。<br>4.<kbd>mv</kbd><br>用来移动文件或者<strong>重命名</strong>文件。<br>5.<kbd>chmod</kbd><br>更改文件属性，对于相关权限还不是很熟悉，不会用数字组合。用<kbd>ls -l</kbd>可以看到权限，总共有10个字符，第一个代表类型，d是目录，后面是每三个以组，以user,group,other为分界，各种用户的权限，rwx的顺序。感觉下面这个指令比较好懂。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod u=rwx,g=rwx,o=rwx file_name</span><br></pre></td></tr></table></figure>
+<p>权限不够，sudo!!!<br>6.<kbd>cat</kbd><br>查看文件的前几行，还有tail head等等类似。</p>
+<hr>
+<h2 id="写东西进去文件"><a href="#写东西进去文件" class="headerlink" title="写东西进去文件"></a>写东西进去文件</h2><p>1.<strong>nano</strong><br>自带的，比较易上手，看清指令描述就好。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano file_name</span><br></pre></td></tr></table></figure>
+<p>2.<strong>vim</strong><br>有三种模式？（应该是这种说法）一开始进去的是一般模式（姑且这样叫吧），yy,gg,0,p,u之类的指令，记住常用的就好。在这里按i就进入insert(输入)，键盘除了esc(切回一般模式)都能按。在一般模式下，输入:(<strong>英文冒号</strong>)就进入第三种模式，命令模式，<kbd>:wq</kbd>保存并退出。</p>
+<hr>
+<h2 id="换阿里源"><a href="#换阿里源" class="headerlink" title="换阿里源"></a>换阿里源</h2><p>先备份/etc/apt/source.list的源文件，再修改该文件即可，只需知道发行的版本号<kbd>lsb_lease -a</kbd>和阿里源的镜像文件（在原来的suorces.list上改几个网址）或者在镜像文件上改版本号，改完保存，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p>这个命令就换好了。下载vim不用等老久，install命令快得一批！</p>
+<hr>
+<p>还有很多命令的相关选项还没深入学习和shell。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/01/29/first_post/" rel="prev" title="在hexo+github搭博客遇到的问题">
+                  <i class="fa fa-chevron-left"></i> 在hexo+github搭博客遇到的问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/03/11/Git%E7%9A%84%E6%93%8D%E4%BD%9C/" rel="next" title="Git的相关操作">
+                  Git的相关操作 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
